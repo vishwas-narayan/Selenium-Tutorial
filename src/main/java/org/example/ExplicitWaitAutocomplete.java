@@ -7,9 +7,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
 public class ExplicitWaitAutocomplete {
     public static void main(String[] args) throws InterruptedException {
 
@@ -19,7 +16,7 @@ public class ExplicitWaitAutocomplete {
         WebElement autocomplete = webDriver.findElement(By.id("autocomplete"));
         autocomplete.sendKeys("RT Nagar, Bengaluru-560032");
 
-        WebDriverWait wait = new WebDriverWait(webDriver,Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(webDriver,10);
         WebElement autocompleteResult = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("dismissButton")));
         autocompleteResult.click();
         webDriver.quit();
